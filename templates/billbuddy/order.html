@@ -1,0 +1,12 @@
+{% if menu %}
+    <ul>
+    {% for category in menu %}
+    	<li><h2>{{ category.name }}</h2></li>
+    	{% for item in category.children %}
+        	<dt>{{ item.name }}</dt> <dd>({{ item.descrip }})</dd>
+        {% endfor %}
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No items are available.</p>
+{% endif %}
