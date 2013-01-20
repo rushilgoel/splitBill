@@ -3,5 +3,10 @@
 <p>Looks like you're near {{ restaurant_name }}</p>
 
 Do you want to check-in?
-<a href ="{% url order restaurant_id %}">Yes</a>
+<form action="{% url check_in %}" method="post">{% csrf_token %}
+<input type="hidden" name="user_id" value="{{user_id}}" />
+<input type="hidden" name="restaurant_id" value="{{restaurant_id}}" />
+<input type="submit" value="Yes" />
+<input type="reset" value="No" />
+</form>
 
