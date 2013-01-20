@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  form(action="/search", method="GET")
+      p
+        label Street Address:
+          input(name="addr")
+      p
+        label Street Address 2:
+          input(name="addr2")
+      p
+        label City:
+          input(name="city")
+      p
+        label State:
+          input(name="state")
+      p
+        label Zip Code:
+          input(name="zip")
+      p
+        label Phone Number:
+          input(name="phone", type="tel")
+      p
+        label Delivery Time:
+          input(name="time", value="ASAP")
+      p
+        input(type="submit", value="Search")

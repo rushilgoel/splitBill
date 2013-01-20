@@ -1,0 +1,46 @@
+var  ordrin = (ordrin instanceof Object) ? ordrin : {};
+
+(function(){
+  menuTemplate = "{{{menu}}}";
+  dialogTemplate = "{{{dialog}}}";
+  trayItemTemplate = "{{{trayItem}}}";
+  restaurantsTemplate = "{{{restaurants}}}";
+  confirmTemplate = "{{{confirm}}}";
+
+  if(ordrin.hasOwnProperty("tomato")){
+    if(!ordrin.tomato.hasKey("menuTemplate")){
+      ordrin.tomato.set("menuTemplate", menuTemplate);
+    }
+    if(!ordrin.tomato.hasKey("dialogTemplate")){
+      ordrin.tomato.set("dialogTemplate", dialogTemplate);
+    }
+    if(!ordrin.tomato.hasKey("trayItemTemplate")){
+      ordrin.tomato.set("trayItemTemplate", trayItemTemplate);
+    }
+    if(!ordrin.tomato.hasKey("restaurantsTemplate")){
+      ordrin.tomato.set("restaurantsTemplate", restaurantsTemplate);
+    }
+    if(!ordrin.tomato.hasKey("confirmTemplate")){
+      ordrin.tomato.set("confirmTemplate", confirmTemplate);
+    }
+  } else {
+    if(!ordrin.init.hasOwnProperty("menuTemplate")){
+      ordrin.init.menuTemplate = menuTemplate;
+    }
+    if(!ordrin.init.hasOwnProperty("dialogTemplate")){
+      ordrin.init.dialogTemplate = dialogTemplate;
+    }
+    if(!ordrin.init.hasOwnProperty("trayItemTemplate")){
+      ordrin.init.trayItemTemplate = trayItemTemplate;
+    }
+    if(!ordrin.init.hasOwnProperty("restaurantsTemplate")){
+      ordrin.init.restaurantsTemplate = restaurantsTemplate;
+    }
+    if(!ordrin.init.hasOwnProperty("confirmTemplate")){
+      ordrin.init.confirmTemplate = confirmTemplate;
+    }
+  }
+
+  {{{mustache}}}
+  ordrin.Mustache = Mustache;
+})();

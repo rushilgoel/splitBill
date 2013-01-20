@@ -1,0 +1,24 @@
+<article class="restaurant-container">
+<div>
+  <ul class="restaurants">
+    {{#restaurants}}
+      <li>
+        <div class="rest-info big-col">
+          <section class="detail-col">
+            <a href="{{#params}}{{menu_uri}}{{/params}}/{{id}}{{#params}}?time={{dateTime}}&addr={{addr}}&city={{city}}&state={{state}}&zip={{zip}}&phone={{phone}}&addr2={{addr2}}{{/params}}"><h1 class="restaurant">{{na}}</h1></a>
+              <p class="address">{{ad}}</p>
+              <p>Expected delivery time: {{del}} minutes</p>
+              <p>Minimum order amount: ${{mino}}</p>
+              <ul>
+                {{#cu}}
+                  {{.}},
+                {{/cu}}
+              </ul>
+              <p>This restaurant will{{^is_delivering}} <b>not</b>{{/is_delivering}} deliver to this address at this time</p>
+          </section>
+        </div>
+      </li>
+    {{/restaurants}}
+  </ul>
+</div>
+</article>
