@@ -1,0 +1,26 @@
+<!Doctype html>
+<html>
+  <head>
+    <link href="style/main.css" rel="stylesheet" type="text/css">
+    <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <script>
+      var ordrin = typeof ordrin==="undefined"?{}:ordrin;
+      var ordrin = typeof ordrin==="undefined"?{}:ordrin;
+      ordrin.init.noProxy = true;
+      ordrin.init.menu = "";
+      ordrin.init.rid = 5913; // the restaurant's ordr.in ID
+      ordrin.init.page = "menu";
+      ordrin.init.render = true;
+      ordrin.restaurantUrl = ordrin.orderUrl = location.origin+"http://127.0.0.1:3000/";
+      (function(){
+        var ow = document.createElement('script'); ow.type = 'text/javascript'; ow.async = true;
+        ow.src = 'script/mustard.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ow, s);  
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="ordrinMenu"></div>
+  </body>
+</html>

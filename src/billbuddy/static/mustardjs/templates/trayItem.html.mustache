@@ -1,0 +1,16 @@
+<li class="trayItem" data-listener="editTrayItem" data-miid="{{id}}" data-tray-id="{{trayItemId}}">
+  <div class="trayItemRemove" data-listener="removeTrayItem">
+    X
+  </div>
+  <span class="trayItemName">{{name}}</span>
+  <span class="trayItemPrice">{{quantityPrice}}</span>
+  <span class="trayItemQuantity">({{quantity}})</span>
+  <ul>
+    {{#options}}
+    <li class="trayOption">
+      <span class="trayOptionName">{{name}}</span>
+      <span class="trayOptionPrice">{{totalPrice}}</span>
+    </li>
+    {{/options}}
+  </ul>
+</li>

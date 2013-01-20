@@ -1,0 +1,39 @@
+<div class="popup-box-container dialog">
+  <div class="close-popup-box">
+    <img class="closeDialog" data-listener="closeDialog" src="https://fb.ordr.in/images/popup-close.png" />
+  </div>
+  <div class="mItem-add-to-tray popup-content">
+    <div class="menu-hd">
+      <div class="boxright">
+	<h1 class="big-col itemTitle">{{name}}</h1>
+	<p class="slim-col itemPrice">{{price}}</p>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <p class="desc dialogDescription">{{descrip}}</p>
+  </div>
+  <div class="optionContainer">
+    <ul class="optionCategoryList">
+      {{#children}}
+      <li data-mogid="{{id}}" class="optionCategory">
+	<span class="header">{{name}}</span>
+	<span class="error"></span>
+	<ul class="optionList">
+	  {{#children}}
+	  <li class="option" data-moid="{{id}}">
+	    <input type="checkbox" class="optionCheckbox" data-listener="optionCheckbox" />
+	    <span class="optionName">{{name}}</span>
+	    <span class="optionPrice">{{price}}</span>
+	  </li>
+	  {{/children}}
+	</ul>
+	<div class="clear"></div>
+      </li>
+      {{/children}}
+    </ul>      
+  </div>
+  <label for="itemQuantity">Quantity: </label>
+  <input type="number" class="itemQuantity" value="1" min="1" />
+  <br />
+  <input type="submit" class="buttonRed" data-listener="addToTray" value="Add to Tray" />
+</div>
