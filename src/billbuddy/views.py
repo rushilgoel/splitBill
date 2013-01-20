@@ -18,5 +18,13 @@ def index(request):
     restaurant_name = api.restaurant.get_details(restaurant_id)['name']
     context = Context({
         'restaurant_name': restaurant_name,
+        'restaurant_id' : restaurant_id
     })
     return HttpResponse(template.render(context))
+
+def order(request, restaurant_id):
+    restaurant_detail = api.restaurant.get_details(restaurant_id)
+    menu = restaurant_detail['menu']
+    
+    context = {'menu' : menu}
+    return render(request, 'billbuddy/order.html', context)
