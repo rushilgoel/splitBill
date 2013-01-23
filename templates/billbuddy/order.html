@@ -1,3 +1,6 @@
+<!--
+For {{user_id}} in {{groupname}} at {{restaurant_name}}:
+
 {% if menu %}
     <ul>
     {% for category in menu %}
@@ -10,3 +13,31 @@
 {% else %}
     <p>No items are available.</p>
 {% endif %}
+-->
+
+<!Doctype html>
+<html>
+  <head>
+    <link href="{{ STATIC_URL }}mustardjs/style/main.css" rel="stylesheet" type="text/css">
+    <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <script>
+      ordrin = typeof ordrin==="undefined"?{}:ordrin;
+      ordrin.init = ordrin.init===undefined?{}:ordrin.init;
+      ordrin.init.noProxy = true;
+      ordrin.init.menu = "{{menu}}";
+      ordrin.init.rid = {{restaurant_id}}; // the restaurant's ordr.in ID
+      ordrin.init.page = "menu";
+      ordrin.init.render = true;
+      //ordrin.restaurantUrl = ordrin.orderUrl = location.origin+"http://127.0.0.1:3000/";
+      (function(){
+        var ow = document.createElement('script'); ow.type = 'text/javascript'; ow.async = true;
+        ow.src = '{{ STATIC_URL }}mustardjs/script/mustard.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ow, s);  
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="ordrinMenu"></div>
+  </body>
+</html>
